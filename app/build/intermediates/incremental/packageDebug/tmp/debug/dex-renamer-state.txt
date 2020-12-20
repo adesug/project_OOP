@@ -1,4 +1,4 @@
-#Sun Dec 06 21:59:18 ICT 2020
-base.0=C\:\\Users\\ASUS\\AndroidStudioProjects\\Project_OOP\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+#Sun Dec 20 21:45:27 ICT 2020
+base.0=D\:\\Kuliah\\Kuliah\\Semester 5\\OOP\\androidstudioproject\\project_OOP\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

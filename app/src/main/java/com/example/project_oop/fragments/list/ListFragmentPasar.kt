@@ -16,12 +16,12 @@ class ListFragmentPasar : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view  = inflater.inflate(R.layout.fragment_list_pasar, container, false)
+        val view2  = inflater.inflate(R.layout.fragment_list_pasar, container, false)
 
-        view.floatingActionButton.setOnClickListener{
-            findNavController().navigate(R.id.action_listFragment_to_addFragment)
+        view2.floatingActionButton.setOnClickListener{
+            findNavController().navigate(R.id.action_listFragmentPasar2_to_addFragmentPasar)
         }
 
-        return view
+        return view2
     }
 }

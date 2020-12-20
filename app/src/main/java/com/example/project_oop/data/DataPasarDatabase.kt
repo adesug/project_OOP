@@ -7,6 +7,7 @@ import androidx.room.RoomDatabase
 import java.security.AccessControlContext
 
 @Database(entities = [DataPasar::class], version = 1, exportSchema =  false)
+
 abstract class DataPasarDatabase:RoomDatabase() {
 
     abstract fun dataPasarDao(): DataPasarDao
@@ -24,7 +25,7 @@ abstract class DataPasarDatabase:RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     DataPasarDatabase::class.java,
-                    "tb_pasar"
+                    "pasar_database"
                 ).build()
                 INSTACE = instance
                 return  instance

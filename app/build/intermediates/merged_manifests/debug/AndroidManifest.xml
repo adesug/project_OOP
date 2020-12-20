@@ -13,17 +13,21 @@
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="Data Pasar Dan Pedagang"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.example.project_oop.MainActivity" >
+        <activity android:name="com.example.project_oop.ActivityPilihan" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name="com.example.project_oop.MainActivity" >
+        </activity>
+        <activity android:name="com.example.project_oop.MainActivityPasar" >
         </activity>
 
         <service

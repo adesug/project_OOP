@@ -1274,6 +1274,7 @@ id accessibility_custom_action_7
 id accessibility_custom_action_8
 id accessibility_custom_action_9
 id action0
+id action_addFragmentPasar_to_listFragmentPasar2
 id action_addFragment_to_listFragment
 id action_bar
 id action_bar_activity_content
@@ -1286,6 +1287,7 @@ id action_container
 id action_context_bar
 id action_divider
 id action_image
+id action_listFragmentPasar2_to_addFragmentPasar
 id action_listFragment_to_addFragment
 id action_menu_divider
 id action_menu_presenter
@@ -1297,6 +1299,7 @@ id actions
 id activity_chooser_view_content
 id add
 id addFragment
+id addFragmentPasar
 id add_alamat
 id add_btn
 id add_nama
@@ -1320,6 +1323,9 @@ id beginning
 id blocking
 id bottom
 id bounce
+id btn_pasar
+id btn_pedagang
+id buttonAdd
 id buttonPanel
 id cache_measures
 id cancel_action
@@ -1368,6 +1374,9 @@ id easeIn
 id easeInOut
 id easeOut
 id edit_query
+id edt_alamatPasar
+id edt_namaPasar
+id edt_tipePasar
 id end
 id end_padder
 id enterAlways
@@ -1384,6 +1393,7 @@ id flip
 id floatingActionButton
 id forever
 id fragment
+id fragmentPasar
 id fragment_container_view_tag
 id ghost_view
 id gone
@@ -1415,6 +1425,7 @@ id line1
 id line3
 id linear
 id listFragment
+id listFragmentPasar2
 id listMode
 id list_item
 id masked
@@ -1429,6 +1440,7 @@ id multiply
 id my_nav
 id nav_controller_view_tag
 id nav_host_fragment_container
+id nav_pasar
 id navigation_header_container
 id never
 id none
@@ -1527,6 +1539,8 @@ id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
+id textView
+id textView2
 id text_input_password_toggle
 id textinput_counter
 id textinput_error
@@ -1614,6 +1628,8 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
+layout activity_main_pasar
+layout activity_pilihan
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -1630,7 +1646,9 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
 layout fragment_add
+layout fragment_add_pasar
 layout fragment_list
+layout fragment_list_pasar
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
 layout notification_action
@@ -1655,6 +1673,7 @@ layout support_simple_spinner_dropdown_item
 mipmap ic_launcher
 mipmap ic_launcher_round
 navigation my_nav
+navigation nav_pasar
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description

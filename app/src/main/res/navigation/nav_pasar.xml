@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_pasar"
+    app:startDestination="@id/listFragmentPasar2">
+
+    <fragment
+        android:id="@+id/addFragmentPasar"
+        android:name="com.example.project_oop.fragments.add.AddFragmentPasar"
+        android:label="fragment_add_pasar"
+        tools:layout="@layout/fragment_add_pasar" >
+        <action
+            android:id="@+id/action_addFragmentPasar_to_listFragmentPasar2"
+            app:destination="@id/listFragmentPasar2" />
+    </fragment>
+    <fragment
+        android:id="@+id/listFragmentPasar2"
+        android:name="com.example.project_oop.fragments.list.ListFragmentPasar"
+        android:label="fragment_list_pasar"
+        tools:layout="@layout/fragment_list_pasar" >
+        <action
+            android:id="@+id/action_listFragmentPasar2_to_addFragmentPasar"
+            app:destination="@id/addFragmentPasar" />
+    </fragment>
+</navigation>
