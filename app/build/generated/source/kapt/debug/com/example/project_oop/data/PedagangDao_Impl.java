@@ -3,12 +3,15 @@ package com.example.project_oop.data;
 import android.database.Cursor;
 import androidx.lifecycle.LiveData;
 import androidx.room.CoroutinesRoom;
+import androidx.room.EntityDeletionOrUpdateAdapter;
 import androidx.room.EntityInsertionAdapter;
 import androidx.room.RoomDatabase;
 import androidx.room.RoomSQLiteQuery;
+import androidx.room.SharedSQLiteStatement;
 import androidx.room.util.CursorUtil;
 import androidx.room.util.DBUtil;
 import androidx.sqlite.db.SupportSQLiteStatement;
+import com.example.project_oop.model.Pedagang;
 import java.lang.Exception;
 import java.lang.Object;
 import java.lang.Override;
@@ -25,6 +28,12 @@ public final class PedagangDao_Impl implements PedagangDao {
   private final RoomDatabase __db;
 
   private final EntityInsertionAdapter<Pedagang> __insertionAdapterOfPedagang;
+
+  private final EntityDeletionOrUpdateAdapter<Pedagang> __deletionAdapterOfPedagang;
+
+  private final EntityDeletionOrUpdateAdapter<Pedagang> __updateAdapterOfPedagang;
+
+  private final SharedSQLiteStatement __preparedStmtOfDeleteAllPedagang;
 
   public PedagangDao_Impl(RoomDatabase __db) {
     this.__db = __db;
@@ -50,6 +59,47 @@ public final class PedagangDao_Impl implements PedagangDao {
         stmt.bindLong(4, value.getNo_lapak());
       }
     };
+    this.__deletionAdapterOfPedagang = new EntityDeletionOrUpdateAdapter<Pedagang>(__db) {
+      @Override
+      public String createQuery() {
+        return "DELETE FROM `data_pedagang` WHERE `id` = ?";
+      }
+
+      @Override
+      public void bind(SupportSQLiteStatement stmt, Pedagang value) {
+        stmt.bindLong(1, value.getId());
+      }
+    };
+    this.__updateAdapterOfPedagang = new EntityDeletionOrUpdateAdapter<Pedagang>(__db) {
+      @Override
+      public String createQuery() {
+        return "UPDATE OR ABORT `data_pedagang` SET `id` = ?,`nama` = ?,`alamat_pedagang` = ?,`no_lapak` = ? WHERE `id` = ?";
+      }
+
+      @Override
+      public void bind(SupportSQLiteStatement stmt, Pedagang value) {
+        stmt.bindLong(1, value.getId());
+        if (value.getNama() == null) {
+          stmt.bindNull(2);
+        } else {
+          stmt.bindString(2, value.getNama());
+        }
+        if (value.getAlamat_pedagang() == null) {
+          stmt.bindNull(3);
+        } else {
+          stmt.bindString(3, value.getAlamat_pedagang());
+        }
+        stmt.bindLong(4, value.getNo_lapak());
+        stmt.bindLong(5, value.getId());
+      }
+    };
+    this.__preparedStmtOfDeleteAllPedagang = new SharedSQLiteStatement(__db) {
+      @Override
+      public String createQuery() {
+        final String _query = "DELETE FROM data_pedagang";
+        return _query;
+      }
+    };
   }
 
   @Override
@@ -67,6 +117,59 @@ public final class PedagangDao_Impl implements PedagangDao {
         }
       }
     }, p1);
+  }
+
+  @Override
+  public Object deletePedagang(final Pedagang pedagang, final Continuation<? super Unit> p1) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+      @Override
+      public Unit call() throws Exception {
+        __db.beginTransaction();
+        try {
+          __deletionAdapterOfPedagang.handle(pedagang);
+          __db.setTransactionSuccessful();
+          return Unit.INSTANCE;
+        } finally {
+          __db.endTransaction();
+        }
+      }
+    }, p1);
+  }
+
+  @Override
+  public Object updatePedagang(final Pedagang pedagang, final Continuation<? super Unit> p1) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+      @Override
+      public Unit call() throws Exception {
+        __db.beginTransaction();
+        try {
+          __updateAdapterOfPedagang.handle(pedagang);
+          __db.setTransactionSuccessful();
+          return Unit.INSTANCE;
+        } finally {
+          __db.endTransaction();
+        }
+      }
+    }, p1);
+  }
+
+  @Override
+  public Object deleteAllPedagang(final Continuation<? super Unit> p0) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+      @Override
+      public Unit call() throws Exception {
+        final SupportSQLiteStatement _stmt = __preparedStmtOfDeleteAllPedagang.acquire();
+        __db.beginTransaction();
+        try {
+          _stmt.executeUpdateDelete();
+          __db.setTransactionSuccessful();
+          return Unit.INSTANCE;
+        } finally {
+          __db.endTransaction();
+          __preparedStmtOfDeleteAllPedagang.release(_stmt);
+        }
+      }
+    }, p0);
   }
 
   @Override

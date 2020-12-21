@@ -11,8 +11,8 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.project_oop.R
-import com.example.project_oop.data.Pedagang
-import com.example.project_oop.data.PedagangViewModel
+import com.example.project_oop.model.Pedagang
+import com.example.project_oop.viewmodel.PedagangViewModel
 import kotlinx.android.synthetic.main.fragment_add.*
 import kotlinx.android.synthetic.main.fragment_add.view.*
 
@@ -44,7 +44,12 @@ class AddFragment : Fragment() {
 
         if (inputCheck(nama, alamat, no_lapak)){
             // check user object
-            val pedagang = Pedagang ( 0, nama, alamat, Integer.parseInt(no_lapak.toString()))
+            val pedagang = Pedagang(
+                0,
+                nama,
+                alamat,
+                Integer.parseInt(no_lapak.toString())
+            )
             // add data to Database
             mPedagangViewModel.addPedagang(pedagang)
             Toast.makeText(requireContext(),"Successfully added!", Toast.LENGTH_LONG).show()

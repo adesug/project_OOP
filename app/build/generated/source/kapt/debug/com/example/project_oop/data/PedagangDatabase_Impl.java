@@ -86,7 +86,7 @@ public final class PedagangDatabase_Impl extends PedagangDatabase {
         final TableInfo _infoDataPedagang = new TableInfo("data_pedagang", _columnsDataPedagang, _foreignKeysDataPedagang, _indicesDataPedagang);
         final TableInfo _existingDataPedagang = TableInfo.read(_db, "data_pedagang");
         if (! _infoDataPedagang.equals(_existingDataPedagang)) {
-          return new RoomOpenHelper.ValidationResult(false, "data_pedagang(com.example.project_oop.data.Pedagang).\n"
+          return new RoomOpenHelper.ValidationResult(false, "data_pedagang(com.example.project_oop.model.Pedagang).\n"
                   + " Expected:\n" + _infoDataPedagang + "\n"
                   + " Found:\n" + _existingDataPedagang);
         }

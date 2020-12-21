@@ -1207,6 +1207,7 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable ic_add
+drawable ic_baseline_delete_24
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_mtrl_chip_checked_black
@@ -1239,6 +1240,10 @@ id SHOW_ALL
 id SHOW_PATH
 id SHOW_PROGRESS
 id SYM
+id Update_alamat
+id Update_btn
+id Update_nama
+id Update_no_lapak
 id accelerate
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
@@ -1289,12 +1294,14 @@ id action_divider
 id action_image
 id action_listFragmentPasar2_to_addFragmentPasar
 id action_listFragment_to_addFragment
+id action_listFragment_to_updateFragment
 id action_menu_divider
 id action_menu_presenter
 id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
 id action_text
+id action_updateFragment_to_listFragment
 id actions
 id activity_chooser_view_content
 id add
@@ -1304,6 +1311,7 @@ id add_alamat
 id add_btn
 id add_nama
 id add_no_lapak
+id alamat_txt
 id alertTitle
 id aligned
 id all
@@ -1407,6 +1415,7 @@ id homeAsUp
 id honorRequest
 id icon
 id icon_group
+id id_txt
 id ifRoom
 id ignore
 id ignoreRequest
@@ -1430,6 +1439,7 @@ id listMode
 id list_item
 id masked
 id media_actions
+id menu_delete
 id message
 id middle
 id mini
@@ -1438,11 +1448,13 @@ id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id multiply
 id my_nav
+id name_txt
 id nav_controller_view_tag
 id nav_host_fragment_container
 id nav_pasar
 id navigation_header_container
 id never
+id noLapak_txt
 id none
 id normal
 id notification_background
@@ -1473,6 +1485,7 @@ id reverseSawtooth
 id right
 id right_icon
 id right_side
+id rowLayout
 id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type
@@ -1565,6 +1578,7 @@ id unchecked
 id uniform
 id unlabeled
 id up
+id updateFragment
 id useLogo
 id view_offset_helper
 id visible
@@ -1631,6 +1645,7 @@ layout activity_main
 layout activity_main_pasar
 layout activity_pilihan
 layout custom_dialog
+layout custom_row
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -1649,6 +1664,7 @@ layout fragment_add
 layout fragment_add_pasar
 layout fragment_list
 layout fragment_list_pasar
+layout fragment_update
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
 layout notification_action
@@ -1670,6 +1686,7 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+menu delete_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 navigation my_nav
