@@ -41,7 +41,7 @@ class PedagangViewModel(aplication:Application): AndroidViewModel(aplication){
         }
     }
 
-    fun deleteAllPedagang( pedagang: Pedagang){
+    fun deleteAllPedagang(){
         viewModelScope.launch(Dispatchers.IO) {
             repository.deleteAllPedagang()
         }

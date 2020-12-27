@@ -29,6 +29,8 @@ public final class PedagangDao_Impl implements PedagangDao {
 
   private final EntityInsertionAdapter<Pedagang> __insertionAdapterOfPedagang;
 
+  private final EntityInsertionAdapter<Pedagang> __insertionAdapterOfPedagang_1;
+
   private final EntityDeletionOrUpdateAdapter<Pedagang> __deletionAdapterOfPedagang;
 
   private final EntityDeletionOrUpdateAdapter<Pedagang> __updateAdapterOfPedagang;
@@ -41,6 +43,28 @@ public final class PedagangDao_Impl implements PedagangDao {
       @Override
       public String createQuery() {
         return "INSERT OR IGNORE INTO `data_pedagang` (`id`,`nama`,`alamat_pedagang`,`no_lapak`) VALUES (nullif(?, 0),?,?,?)";
+      }
+
+      @Override
+      public void bind(SupportSQLiteStatement stmt, Pedagang value) {
+        stmt.bindLong(1, value.getId());
+        if (value.getNama() == null) {
+          stmt.bindNull(2);
+        } else {
+          stmt.bindString(2, value.getNama());
+        }
+        if (value.getAlamat_pedagang() == null) {
+          stmt.bindNull(3);
+        } else {
+          stmt.bindString(3, value.getAlamat_pedagang());
+        }
+        stmt.bindLong(4, value.getNo_lapak());
+      }
+    };
+    this.__insertionAdapterOfPedagang_1 = new EntityInsertionAdapter<Pedagang>(__db) {
+      @Override
+      public String createQuery() {
+        return "INSERT OR REPLACE INTO `data_pedagang` (`id`,`nama`,`alamat_pedagang`,`no_lapak`) VALUES (nullif(?, 0),?,?,?)";
       }
 
       @Override
@@ -120,6 +144,18 @@ public final class PedagangDao_Impl implements PedagangDao {
   }
 
   @Override
+  public void insert(final Pedagang pedagang) {
+    __db.assertNotSuspendingTransaction();
+    __db.beginTransaction();
+    try {
+      __insertionAdapterOfPedagang_1.insert(pedagang);
+      __db.setTransactionSuccessful();
+    } finally {
+      __db.endTransaction();
+    }
+  }
+
+  @Override
   public Object deletePedagang(final Pedagang pedagang, final Continuation<? super Unit> p1) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
@@ -170,6 +206,40 @@ public final class PedagangDao_Impl implements PedagangDao {
         }
       }
     }, p0);
+  }
+
+  @Override
+  public Pedagang findById(final int id) {
+    final String _sql = "SELECT * FROM data_pedagang WHERE id = ? LIMIT 1";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
+    int _argIndex = 1;
+    _statement.bindLong(_argIndex, id);
+    __db.assertNotSuspendingTransaction();
+    final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+    try {
+      final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
+      final int _cursorIndexOfNama = CursorUtil.getColumnIndexOrThrow(_cursor, "nama");
+      final int _cursorIndexOfAlamatPedagang = CursorUtil.getColumnIndexOrThrow(_cursor, "alamat_pedagang");
+      final int _cursorIndexOfNoLapak = CursorUtil.getColumnIndexOrThrow(_cursor, "no_lapak");
+      final Pedagang _result;
+      if(_cursor.moveToFirst()) {
+        final int _tmpId;
+        _tmpId = _cursor.getInt(_cursorIndexOfId);
+        final String _tmpNama;
+        _tmpNama = _cursor.getString(_cursorIndexOfNama);
+        final String _tmpAlamat_pedagang;
+        _tmpAlamat_pedagang = _cursor.getString(_cursorIndexOfAlamatPedagang);
+        final int _tmpNo_lapak;
+        _tmpNo_lapak = _cursor.getInt(_cursorIndexOfNoLapak);
+        _result = new Pedagang(_tmpId,_tmpNama,_tmpAlamat_pedagang,_tmpNo_lapak);
+      } else {
+        _result = null;
+      }
+      return _result;
+    } finally {
+      _cursor.close();
+      _statement.release();
+    }
   }
 
   @Override

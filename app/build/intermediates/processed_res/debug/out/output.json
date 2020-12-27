@@ -21,7 +21,7 @@
       "properties": {
         "packageId": "com.example.project_oop",
         "split": "",
-        "minSdkVersion": "19"
+        "minSdkVersion": "26"
       }
     }
   ]

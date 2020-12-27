@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import cn.pedant.SweetAlert.SweetAlertDialog
 import com.example.project_oop.R
 import com.example.project_oop.model.Pedagang
 import com.example.project_oop.viewmodel.PedagangViewModel
@@ -52,7 +53,9 @@ class AddFragment : Fragment() {
             )
             // add data to Database
             mPedagangViewModel.addPedagang(pedagang)
-            Toast.makeText(requireContext(),"Successfully added!", Toast.LENGTH_LONG).show()
+            SweetAlertDialog(activity, SweetAlertDialog.SUCCESS_TYPE)
+                .setTitleText("Data Berhasil Di Tambahkan")
+                .show()
             //navigate back
             findNavController().navigate(R.id.action_addFragment_to_listFragment)
 
