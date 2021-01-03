@@ -38,5 +38,11 @@ class ListFragmentDirections private constructor() {
 
     fun actionListFragmentToUpdateFragment(currentPedagang: Pedagang): NavDirections =
         ActionListFragmentToUpdateFragment(currentPedagang)
+
+    fun actionListFragmentToFragmentPilihan2(): NavDirections =
+        ActionOnlyNavDirections(R.id.action_listFragment_to_fragment_pilihan2)
+
+    fun actionListFragmentToFragmentPilihan3(): NavDirections =
+        ActionOnlyNavDirections(R.id.action_listFragment_to_fragment_pilihan3)
   }
 }

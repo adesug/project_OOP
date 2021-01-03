@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/my_nav"
-    app:startDestination="@id/listFragment">
+    app:startDestination="@id/fragment_pilihan">
     <fragment
         android:id="@+id/listFragment"
         android:name="com.example.project_oop.fragments.list.ListFragment"
@@ -15,6 +15,12 @@
         <action
             android:id="@+id/action_listFragment_to_updateFragment"
             app:destination="@id/updateFragment" />
+        <action
+            android:id="@+id/action_listFragment_to_fragment_pilihan2"
+            app:destination="@id/fragment_pilihan" />
+        <action
+            android:id="@+id/action_listFragment_to_fragment_pilihan3"
+            app:destination="@id/fragment_pilihan" />
     </fragment>
     <fragment
         android:id="@+id/addFragment"
@@ -36,5 +42,56 @@
         <argument
             android:name="currentPedagang"
             app:argType="com.example.project_oop.model.Pedagang" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_pilihan"
+        android:name="com.example.project_oop.fragments.fragment_pilihan"
+        android:label="Pilih Data"
+        tools:layout="@layout/fragment_pilihan" >
+        <action
+            android:id="@+id/action_fragment_pilihan2_to_listFragment"
+            app:destination="@id/listFragment" />
+        <action
+            android:id="@+id/action_fragment_pilihan_to_listFragmentPasar"
+            app:destination="@id/listFragmentPasar" />
+    </fragment>
+    <fragment
+        android:id="@+id/listFragmentPasar"
+        android:name="com.example.project_oop.fragments.list.ListFragmentPasar"
+        android:label="List Pasar"
+        tools:layout="@layout/fragment_list_pasar" >
+        <action
+            android:id="@+id/action_listFragmentPasar_to_fragment_pilihan2"
+            app:destination="@id/fragment_pilihan" />
+        <action
+            android:id="@+id/action_listFragmentPasar_to_fragment_pilihan3"
+            app:destination="@id/fragment_pilihan" />
+        <action
+            android:id="@+id/action_listFragmentPasar_to_addFragmentPasar"
+            app:destination="@id/addFragmentPasar" />
+        <action
+            android:id="@+id/action_listFragmentPasar_to_updatePasar"
+            app:destination="@id/updatePasar" />
+    </fragment>
+    <fragment
+        android:id="@+id/addFragmentPasar"
+        android:name="com.example.project_oop.fragments.add.AddFragmentPasar"
+        android:label="Tambah Pasar"
+        tools:layout="@layout/fragment_add_pasar" >
+        <action
+            android:id="@+id/action_addFragmentPasar_to_listFragmentPasar"
+            app:destination="@id/listFragmentPasar" />
+    </fragment>
+    <fragment
+        android:id="@+id/updatePasar"
+        android:name="com.example.project_oop.fragments.update.UpdatePasar"
+        android:label="Update Data Pasar"
+        tools:layout="@layout/fragment_update_pasar" >
+        <action
+            android:id="@+id/action_updatePasar_to_listFragmentPasar"
+            app:destination="@id/listFragmentPasar" />
+        <argument
+            android:name="currentPasar"
+            app:argType="com.example.project_oop.model.DataPasar" />
     </fragment>
 </navigation>

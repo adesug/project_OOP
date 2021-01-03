@@ -86,7 +86,7 @@ public final class DataPasarDatabase_Impl extends DataPasarDatabase {
         final TableInfo _infoTbPasar = new TableInfo("tb_pasar", _columnsTbPasar, _foreignKeysTbPasar, _indicesTbPasar);
         final TableInfo _existingTbPasar = TableInfo.read(_db, "tb_pasar");
         if (! _infoTbPasar.equals(_existingTbPasar)) {
-          return new RoomOpenHelper.ValidationResult(false, "tb_pasar(com.example.project_oop.data.DataPasar).\n"
+          return new RoomOpenHelper.ValidationResult(false, "tb_pasar(com.example.project_oop.model.DataPasar).\n"
                   + " Expected:\n" + _infoTbPasar + "\n"
                   + " Found:\n" + _existingTbPasar);
         }

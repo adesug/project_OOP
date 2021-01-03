@@ -13,8 +13,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="198" />
-                            <option name="y" value="-278" />
+                            <option name="x" value="258" />
+                            <option name="y" value="-366" />
                           </Point>
                         </option>
                         <option name="myPositions">
@@ -29,18 +29,75 @@
                       </LayoutPositions>
                     </value>
                   </entry>
+                  <entry key="addFragmentPasar">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-622" />
+                            <option name="y" value="-2" />
+                          </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_addFragmentPasar_to_listFragmentPasar">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="fragment_pilihan">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-404" />
+                            <option name="y" value="-294" />
+                          </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_fragment_pilihan2_to_listFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="action_fragment_pilihan_to_listFragmentPasar">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="listFragment">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-142" />
-                            <option name="y" value="-191" />
+                            <option name="x" value="-72" />
+                            <option name="y" value="-274" />
                           </Point>
                         </option>
                         <option name="myPositions">
                           <map>
                             <entry key="action_listFragment_to_addFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="action_listFragment_to_fragment_pilihan2">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="action_listFragment_to_fragment_pilihan3">
                               <value>
                                 <LayoutPositions />
                               </value>
@@ -55,13 +112,44 @@
                       </LayoutPositions>
                     </value>
                   </entry>
+                  <entry key="listFragmentPasar">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-404" />
+                            <option name="y" value="133" />
+                          </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_listFragmentPasar_to_addFragmentPasar">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="action_listFragmentPasar_to_fragment_pilihan2">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="action_listFragmentPasar_to_fragment_pilihan3">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="updateFragment">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="49" />
-                            <option name="y" value="42" />
+                            <option name="x" value="199" />
+                            <option name="y" value="63" />
                           </Point>
                         </option>
                         <option name="myPositions">
@@ -72,6 +160,18 @@
                               </value>
                             </entry>
                           </map>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="updatePasar">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-164" />
+                            <option name="y" value="168" />
+                          </Point>
                         </option>
                       </LayoutPositions>
                     </value>

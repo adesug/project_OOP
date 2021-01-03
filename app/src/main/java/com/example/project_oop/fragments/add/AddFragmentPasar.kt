@@ -10,10 +10,11 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.project_oop.R
-import com.example.project_oop.data.DataPasar
-import com.example.project_oop.data.DataPasarViewModel
+import com.example.project_oop.model.DataPasar
+import com.example.project_oop.viewmodel.DataPasarViewModel
 import kotlinx.android.synthetic.main.fragment_add_pasar.*
 import kotlinx.android.synthetic.main.fragment_add_pasar.view.*
+
 
 class AddFragmentPasar : Fragment() {
 
@@ -41,12 +42,16 @@ class AddFragmentPasar : Fragment() {
         val tipePasar = edt_tipePasar.text.toString()
 
         if(inputCheck(namaPasar,alamatPasar,tipePasar)){
-            val dataPasar = DataPasar(0, namaPasar, alamatPasar, tipePasar)
+            val dataPasar = DataPasar(
+                0,
+                namaPasar,
+                alamatPasar,
+                tipePasar)
 
             mDataPasarViewModel.addData(dataPasar)
             Toast.makeText(requireContext(), "Sukses Terinput", Toast.LENGTH_LONG).show()
 
-            findNavController().navigate(R.id.action_addFragment_to_listFragment)
+            findNavController().navigate(R.id.action_addFragmentPasar_to_listFragmentPasar)
         }else{
             Toast.makeText(requireContext(), "Gagal", Toast.LENGTH_LONG).show()
         }

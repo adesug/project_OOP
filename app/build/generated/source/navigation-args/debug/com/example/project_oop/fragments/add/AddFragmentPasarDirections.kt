@@ -6,7 +6,7 @@ import com.example.project_oop.R
 
 class AddFragmentPasarDirections private constructor() {
   companion object {
-    fun actionAddFragmentPasarToListFragmentPasar2(): NavDirections =
-        ActionOnlyNavDirections(R.id.action_addFragmentPasar_to_listFragmentPasar2)
+    fun actionAddFragmentPasarToListFragmentPasar(): NavDirections =
+        ActionOnlyNavDirections(R.id.action_addFragmentPasar_to_listFragmentPasar)
   }
 }

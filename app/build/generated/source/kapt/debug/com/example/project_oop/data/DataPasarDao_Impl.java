@@ -3,12 +3,15 @@ package com.example.project_oop.data;
 import android.database.Cursor;
 import androidx.lifecycle.LiveData;
 import androidx.room.CoroutinesRoom;
+import androidx.room.EntityDeletionOrUpdateAdapter;
 import androidx.room.EntityInsertionAdapter;
 import androidx.room.RoomDatabase;
 import androidx.room.RoomSQLiteQuery;
+import androidx.room.SharedSQLiteStatement;
 import androidx.room.util.CursorUtil;
 import androidx.room.util.DBUtil;
 import androidx.sqlite.db.SupportSQLiteStatement;
+import com.example.project_oop.model.DataPasar;
 import java.lang.Exception;
 import java.lang.Object;
 import java.lang.Override;
@@ -25,6 +28,12 @@ public final class DataPasarDao_Impl implements DataPasarDao {
   private final RoomDatabase __db;
 
   private final EntityInsertionAdapter<DataPasar> __insertionAdapterOfDataPasar;
+
+  private final EntityDeletionOrUpdateAdapter<DataPasar> __deletionAdapterOfDataPasar;
+
+  private final EntityDeletionOrUpdateAdapter<DataPasar> __updateAdapterOfDataPasar;
+
+  private final SharedSQLiteStatement __preparedStmtOfDeleteAllPasars;
 
   public DataPasarDao_Impl(RoomDatabase __db) {
     this.__db = __db;
@@ -54,6 +63,51 @@ public final class DataPasarDao_Impl implements DataPasarDao {
         }
       }
     };
+    this.__deletionAdapterOfDataPasar = new EntityDeletionOrUpdateAdapter<DataPasar>(__db) {
+      @Override
+      public String createQuery() {
+        return "DELETE FROM `tb_pasar` WHERE `id` = ?";
+      }
+
+      @Override
+      public void bind(SupportSQLiteStatement stmt, DataPasar value) {
+        stmt.bindLong(1, value.getId());
+      }
+    };
+    this.__updateAdapterOfDataPasar = new EntityDeletionOrUpdateAdapter<DataPasar>(__db) {
+      @Override
+      public String createQuery() {
+        return "UPDATE OR ABORT `tb_pasar` SET `id` = ?,`namaPasar` = ?,`alamatPasar` = ?,`tipePasar` = ? WHERE `id` = ?";
+      }
+
+      @Override
+      public void bind(SupportSQLiteStatement stmt, DataPasar value) {
+        stmt.bindLong(1, value.getId());
+        if (value.getNamaPasar() == null) {
+          stmt.bindNull(2);
+        } else {
+          stmt.bindString(2, value.getNamaPasar());
+        }
+        if (value.getAlamatPasar() == null) {
+          stmt.bindNull(3);
+        } else {
+          stmt.bindString(3, value.getAlamatPasar());
+        }
+        if (value.getTipePasar() == null) {
+          stmt.bindNull(4);
+        } else {
+          stmt.bindString(4, value.getTipePasar());
+        }
+        stmt.bindLong(5, value.getId());
+      }
+    };
+    this.__preparedStmtOfDeleteAllPasars = new SharedSQLiteStatement(__db) {
+      @Override
+      public String createQuery() {
+        final String _query = "DELETE FROM tb_pasar";
+        return _query;
+      }
+    };
   }
 
   @Override
@@ -71,6 +125,59 @@ public final class DataPasarDao_Impl implements DataPasarDao {
         }
       }
     }, p1);
+  }
+
+  @Override
+  public Object deletePasar(final DataPasar dataPasar, final Continuation<? super Unit> p1) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+      @Override
+      public Unit call() throws Exception {
+        __db.beginTransaction();
+        try {
+          __deletionAdapterOfDataPasar.handle(dataPasar);
+          __db.setTransactionSuccessful();
+          return Unit.INSTANCE;
+        } finally {
+          __db.endTransaction();
+        }
+      }
+    }, p1);
+  }
+
+  @Override
+  public Object updatePasar(final DataPasar dataPasar, final Continuation<? super Unit> p1) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+      @Override
+      public Unit call() throws Exception {
+        __db.beginTransaction();
+        try {
+          __updateAdapterOfDataPasar.handle(dataPasar);
+          __db.setTransactionSuccessful();
+          return Unit.INSTANCE;
+        } finally {
+          __db.endTransaction();
+        }
+      }
+    }, p1);
+  }
+
+  @Override
+  public Object deleteAllPasars(final Continuation<? super Unit> p0) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+      @Override
+      public Unit call() throws Exception {
+        final SupportSQLiteStatement _stmt = __preparedStmtOfDeleteAllPasars.acquire();
+        __db.beginTransaction();
+        try {
+          _stmt.executeUpdateDelete();
+          __db.setTransactionSuccessful();
+          return Unit.INSTANCE;
+        } finally {
+          __db.endTransaction();
+          __preparedStmtOfDeleteAllPasars.release(_stmt);
+        }
+      }
+    }, p0);
   }
 
   @Override

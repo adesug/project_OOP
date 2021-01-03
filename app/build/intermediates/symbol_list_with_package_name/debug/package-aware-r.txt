@@ -1357,7 +1357,7 @@ id accessibility_custom_action_7
 id accessibility_custom_action_8
 id accessibility_custom_action_9
 id action0
-id action_addFragmentPasar_to_listFragmentPasar2
+id action_addFragmentPasar_to_listFragmentPasar
 id action_addFragment_to_listFragment
 id action_bar
 id action_bar_activity_content
@@ -1369,9 +1369,16 @@ id action_bar_title
 id action_container
 id action_context_bar
 id action_divider
+id action_fragment_pilihan2_to_listFragment
+id action_fragment_pilihan_to_listFragmentPasar
 id action_image
-id action_listFragmentPasar2_to_addFragmentPasar
+id action_listFragmentPasar_to_addFragmentPasar
+id action_listFragmentPasar_to_fragment_pilihan2
+id action_listFragmentPasar_to_fragment_pilihan3
+id action_listFragmentPasar_to_updatePasar
 id action_listFragment_to_addFragment
+id action_listFragment_to_fragment_pilihan2
+id action_listFragment_to_fragment_pilihan3
 id action_listFragment_to_updateFragment
 id action_menu_divider
 id action_menu_presenter
@@ -1380,6 +1387,7 @@ id action_mode_bar_stub
 id action_mode_close_button
 id action_text
 id action_updateFragment_to_listFragment
+id action_updatePasar_to_listFragmentPasar
 id actions
 id activity_chooser_view_content
 id add
@@ -1411,6 +1419,7 @@ id bottom
 id bounce
 id btn_pasar
 id btn_pedagang
+id btn_updatePasar
 id buttonAdd
 id buttonPanel
 id buttons_container
@@ -1487,8 +1496,8 @@ id flip
 id floatingActionButton
 id forever
 id fragment
-id fragmentPasar
 id fragment_container_view_tag
+id fragment_pilihan
 id ghost_view
 id gone
 id graph
@@ -1520,7 +1529,7 @@ id line1
 id line3
 id linear
 id listFragment
-id listFragmentPasar2
+id listFragmentPasar
 id listMode
 id list_item
 id loading
@@ -1537,10 +1546,10 @@ id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id multiply
 id my_nav
+id nama_txt
 id name_txt
 id nav_controller_view_tag
 id nav_host_fragment_container
-id nav_pasar
 id navigation_header_container
 id neutral_button
 id never
@@ -1578,6 +1587,7 @@ id right
 id right_icon
 id right_side
 id rowLayout
+id rowLayoutPasar
 id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type
@@ -1653,6 +1663,7 @@ id textinput_counter
 id textinput_error
 id textinput_helper_text
 id time
+id tipe_txt
 id title
 id titleDividerNoCustom
 id title_template
@@ -1674,6 +1685,10 @@ id uniform
 id unlabeled
 id up
 id updateFragment
+id updatePasar
+id update_alamatPasar
+id update_namaPasar
+id update_tipePasar
 id useLogo
 id view_offset_helper
 id visible
@@ -1741,11 +1756,10 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
-layout activity_main_pasar
-layout activity_pilihan
 layout alert_dialog
 layout custom_dialog
 layout custom_row
+layout custom_row_pasar
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -1764,7 +1778,9 @@ layout fragment_add
 layout fragment_add_pasar
 layout fragment_list
 layout fragment_list_pasar
+layout fragment_pilihan
 layout fragment_update
+layout fragment_update_pasar
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
 layout notification_action
@@ -1790,7 +1806,6 @@ menu delete_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 navigation my_nav
-navigation nav_pasar
 string LOADING
 string abc_action_bar_home_description
 string abc_action_bar_up_description
